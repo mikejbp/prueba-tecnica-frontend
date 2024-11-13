@@ -30,13 +30,13 @@ export function Footer() {
   return (
     <footer className="text-white pb-10 px-10 lg:px-24 relative">
       <div className="absolute top-0 left-0 w-full h-full bg-red-light"></div>
-      <div className="relative grid grid-cols-1 lg:grid-cols-4 gap-y-6 md:gap-x-10">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 md:gap-x-10">
         {columns.map((col, i) => (
           <div key={i}>
             <h6 className="text-lg xl:text-menu font-segoe font-bold text-orangeYellow-dark">
               {col.title || '\u00A0'}
             </h6>
-            <ul className="text-lg xl:text-menu font-segoe mt-2">
+            <ul className="text-lg xl:text-menu font-segoe">
               {col.items.map((item, idx) => (
                 <li key={idx} className="mt-2 lg:mt-5">
                   {item}
@@ -44,7 +44,7 @@ export function Footer() {
               ))}
             </ul>
             {col.isNewsletter && (
-              <div className="mt-2 absolute">
+              <div className="mt-6 absolute">
                 <input
                   type="email"
                   placeholder="Email Address"
