@@ -5,7 +5,7 @@ interface HomeLayoutProps {
 }
 export default function HomeLayout({ children }: HomeLayoutProps) {
   return (
-    <div>
+    <div className="min-h-screen w-screen">
       <Navbar />
       {children}
       <Footer />
