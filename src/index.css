@@ -3,36 +3,36 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Open Sans";
-  src: url("./assets/fonts/OpenSans-Regular.ttf") format("ttf"), url("./assets/fonts/OpenSans-Bold.ttf") format("ttf");
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('ttf'), url('./assets/fonts/OpenSans-Bold.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Museo Sans Rounded 700";
-  src: url("./assets/fonts/MuseoSansRounded-700.otf") format("otf");
+  font-family: 'Museo Sans Rounded 700';
+  src: url('./assets/fonts/MuseoSansRounded-700.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Comfortaa";
-  src: url("./assets/fonts/Comfortaa-Bold.ttf") format("ttf"), url("./assets/fonts/Comfortaa-Regular.ttf") format("ttf");
+  font-family: 'Comfortaa';
+  src: url('./assets/fonts/Comfortaa-Bold.ttf') format('ttf'), url('./assets/fonts/Comfortaa-Regular.ttf') format('ttf');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Segoe UI";
-  src: url("./assets/fonts/SegoeUI.ttf") format("ttf"), url("./assets/fonts/SegoeUI-Bold.ttf") format("ttf");
+  font-family: 'Segoe UI';
+  src: url('./assets/fonts/SegoeUI.ttf') format('ttf'), url('./assets/fonts/SegoeUI-Bold.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Gibson";
-  src: url("./assets/fonts/Fontspring-DEMO-gibson-semibold.otf") format("ttf");
+  font-family: 'Gibson';
+  src: url('./assets/fonts/Fontspring-DEMO-gibson-semibold.otf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -43,7 +43,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--light-white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -74,11 +74,11 @@
   --orange-yellow: #ffcc55;
   --orange-yellow-dark: #ffe530;
 
-  --font-open-sans: "Open Sans", sans-serif;
-  --font-museo-sans-rounded: "Museo Sans Rounded 700", sans-serif;
-  --font-comfortaa: "Comfortaa", sans-serif;
-  --font-segoe-ui: "Segoe UI", sans-serif;
-  --font-gibson: "Gibson", sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-museo-sans-rounded: 'Museo Sans Rounded 700', sans-serif;
+  --font-comfortaa: 'Comfortaa', sans-serif;
+  --font-segoe-ui: 'Segoe UI', sans-serif;
+  --font-gibson: 'Gibson', sans-serif;
 
   --font-size-navbar-menu: 24px;
   --font-size-main-title: 84px;
@@ -92,11 +92,25 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-open-sans);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: var(--font-museo-sans-rounded);
+}
+
+p.test-comfortaa {
+  font-family: var(--font-comfortaa);
+}
+
+p.test-segoe-ui {
+  font-family: var(--font-segoe-ui);
+}
+
+p.test-gibson {
+  font-family: var(--font-gibson);
 }
 
 .animated-underline {
@@ -104,7 +118,7 @@ h1 {
   padding-bottom: 5px;
 }
 .animated-underline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 2px;
@@ -116,4 +130,52 @@ h1 {
 }
 .animated-underline:hover::after {
   transform: scaleX(1);
+}
+
+@layer base {
+  .h1 {
+    font-size: var(--font-size-main-title);
+  }
+
+  .font-open-sans {
+    font-family: var(--font-open-sans);
+  }
+
+  .font-museo-sans-rounded {
+    font-family: var(--font-museo-sans-rounded);
+  }
+
+  .font-comfortaa {
+    font-family: var(--font-comfortaa);
+  }
+
+  .font-segoe-ui {
+    font-family: var(--font-segoe-ui);
+  }
+
+  .font-gibson {
+    font-family: var(--font-gibson);
+  }
+}
+
+@layer base {
+  body {
+    @apply font-open-sans;
+  }
+
+  h1 {
+    @apply font-museo-sans-rounded;
+  }
+
+  p.test-comfortaa {
+    @apply font-comfortaa;
+  }
+
+  p.test-segoe-ui {
+    @apply font-segoe-ui;
+  }
+
+  p.test-gibson {
+    @apply font-gibson;
+  }
 }
