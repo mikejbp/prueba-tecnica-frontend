@@ -28,21 +28,29 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white py-12 px-10 md:px-24 relative">
+    <footer className="text-white pb-10 px-10 lg:px-24 relative">
       <div className="absolute top-0 left-0 w-full h-full bg-red-light"></div>
-      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-y-6 md:gap-x-6">
+      <div className="relative grid grid-cols-1 lg:grid-cols-4 gap-y-6 md:gap-x-10">
         {columns.map((col, i) => (
           <div key={i}>
-            <h6 className="text-menu font-segoe font-bold text-orangeYellow-dark">{col.title || '\u00A0'}</h6>
-            <ul className="text-menu font-segoe mt-2">
+            <h6 className="text-lg xl:text-menu font-segoe font-bold text-orangeYellow-dark">
+              {col.title || '\u00A0'}
+            </h6>
+            <ul className="text-lg xl:text-menu font-segoe mt-2">
               {col.items.map((item, idx) => (
-                <li key={idx}>{item}</li>
+                <li key={idx} className="mt-2 lg:mt-5">
+                  {item}
+                </li>
               ))}
             </ul>
             {col.isNewsletter && (
-              <div className="mt-2 relative">
-                <input type="email" placeholder="Email Address" className="p-4 text-gray bg-white rounded-full" />
-                <div className="bg-red-light shadow-sm shadow-red-light rounded-full h-12 p-3 ml-2 absolute right-52 bottom-0 top-1">
+              <div className="mt-2 absolute">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="p-4 text-gray bg-white rounded-full shadow-md 2xl:w-80"
+                />
+                <div className="bg-red-light shadow-sm shadow-red-light max-w-12 rounded-full h-12 p-3 relative bottom-[3.3rem] left-[10.8rem] 2xl:left-[16.5rem]">
                   <MoveRight />
                 </div>
               </div>
