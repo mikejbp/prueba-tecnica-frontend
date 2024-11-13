@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -44,8 +48,6 @@ export default {
         'comfortaa': 'var(--font-comfortaa)',
         'segoe': 'var(--font-segoe-ui)',
         'gibson': 'var(--font-gibson)',
-        'custom1': 'var(--font-custom1)',
-        'custom2': 'var(--font-custom2)',
       },
       fontSize: {
         'menu': 'var(--font-size-navbar-menu)',
