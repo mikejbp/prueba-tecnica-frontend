@@ -48,9 +48,9 @@ export function Testimonials() {
 
   return (
     <section className="relative md:py-16 px-4 overflow-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-red-light mb-12 max-w-3xl mx-auto">
+      <h3 className="text-4xl md:text-5xl font-bold text-center text-red-light mb-12 max-w-3xl mx-auto">
         Here's what pet owners have to say about Fetch! Pet Care...
-      </h2>
+      </h3>
       <div className="relative flex justify-center max-w-5xl mx-auto h-[600px] md:h-[400px]">
         {testimonials.map((testimonial, index) => {
           const position = (index - currentIndex + testimonials.length) % testimonials.length;

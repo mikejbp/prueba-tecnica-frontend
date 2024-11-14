@@ -13,9 +13,9 @@ export function DynamicSection() {
       className="mx-auto flex flex-col gap-y-20 lg:flex-row justify-around items-center xl:items-start px-5 sm:px-10 xl:px-0 max-w-screen-2xl bg-transparent mt-20 xl:mt-64 mb-20"
     >
       <aside className="flex flex-col gap-8 px-5 md:px-10 xl:p-x0 relative">
-        <h1 className="text-5xl font-bold text-red-light font-comfortaa">
+        <h2 className="text-5xl font-bold text-red-light font-comfortaa">
           {currentSection?.title ?? ''}
-        </h1>
+        </h2>
         <p className="text-description text-gray max-w-[25rem] leading-7 font-openSans ">
           {currentSection?.description ?? ''}
         </p>

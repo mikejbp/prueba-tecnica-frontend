@@ -25,7 +25,7 @@ export function HowItWorks() {
       </aside>
 
       <aside className="max-w-screen-sm flex flex-col gap-5">
-        <h3 className="font-comfortaa font-bold text-5xl text-red-light">How it works</h3>
+        <h4 className="font-comfortaa font-bold text-5xl text-red-light">How it works</h4>
         <p className="font-openSans text-description text-gray leading-6 max-w-lg">
           Because finding a good pet sitter shouldn't be a hassle. With Fetch! It's as easy as…
         </p>
