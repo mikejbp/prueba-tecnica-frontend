@@ -1,10 +1,54 @@
-import HomeLayout from "../app/components/layout/HomeLayout"
+import { MainSection, Wave } from '../app/components';
+import HomeLayout from '../app/components/layout/HomeLayout';
 
 export function Home() {
   return (
     <HomeLayout>
-      <h1>Home</h1>
-      <p>Welcome to the Home page.</p>
+      <div className="hidden xl:block">
+        <Wave
+          id="wave1"
+          style={{
+            transform: 'rotate(180deg)',
+            transition: '0.3s',
+            top: '-30px',
+            position: 'absolute',
+            width: '100%',
+            height: 'auto',
+            zIndex: -1,
+          }}
+          viewBox="0 0 1400 490"
+          opacity={1}
+        />
+        <Wave
+          id="wave2"
+          style={{
+            transform: 'rotate(180deg)',
+            transition: '0.3s',
+            top: '0',
+            position: 'absolute',
+            width: '100%',
+            height: 'auto',
+            zIndex: -2,
+          }}
+          viewBox="0 50 1400 490"
+          opacity={0.85}
+        />
+        <Wave
+          id="wave3"
+          style={{
+            transform: 'rotate(180deg)',
+            transition: '0.3s',
+            top: '0',
+            position: 'absolute',
+            width: '100%',
+            height: 'auto',
+            zIndex: -3,
+          }}
+          viewBox="0 60 1300 490"
+          opacity={0.8}
+        />
+      </div>
+      <MainSection />
     </HomeLayout>
-  )
+  );
 }

@@ -21,7 +21,7 @@ export function Navbar() {
   const handleOpenMenu = () => setOpenSidebar(!openSidebar);
 
   return (
-    <header className="bg-red-light px-10 md:px-24 py-4">
+    <header className="bg-red-light xl:bg-transparent px-10 md:px-24 py-4">
       <nav className="mx-auto flex justify-between items-center">
         <div className="flex-shrink-0 rounded-full bg-white px-3 py-2">
           <img src="/logo.svg" alt="Logo" className="h-10" />
@@ -36,8 +36,15 @@ export function Navbar() {
           ))}
         </ul>
         <div className="md:hidden">
-          <button className="text-white focus:outline-none transition-transform duration-300" onClick={handleOpenMenu}>
-            <div className={`transform transition-transform duration-300 ${openSidebar ? 'rotate-180' : 'rotate-0'}`}>
+          <button
+            className="text-white focus:outline-none transition-transform duration-300"
+            onClick={handleOpenMenu}
+          >
+            <div
+              className={`transform transition-transform duration-300 ${
+                openSidebar ? 'rotate-180' : 'rotate-0'
+              }`}
+            >
               <Menu size={24} />
             </div>
           </button>

@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '.';
+import { Footer, Navbar } from '..';
 
 interface HomeLayoutProps {
   children: React.ReactNode;
