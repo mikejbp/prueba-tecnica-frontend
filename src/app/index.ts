@@ -1,3 +1,4 @@
+export * from './utils/testimonials.utils';
 export * from './routes/AppRouter';
 export * from './interfaces/sections.inteface';
 export * from './helpers/sections.helper';
@@ -7,5 +8,8 @@ export * from './components/layout/Layout';
 export * from './components/layout/Navbar';
 export * from './components/home/DynamicSection';
 export * from './components/home/MainSection';
+export * from './components/home/Testimonials';
 export * from './components/custom/CustomInput';
+export * from './components/custom/CustomSquare';
+export * from './components/custom/TestimonialCard';
 export * from './components/custom/Wave';

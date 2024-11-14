@@ -1,5 +1,5 @@
-import { Route } from "wouter"
-import { Home, Login } from "../../pages"
+import { Route } from 'wouter';
+import { Home, Login } from '../../pages';
 
 export default function AppRouter() {
   return (
@@ -8,5 +8,5 @@ export default function AppRouter() {
 
       <Route path="/login" component={Login} />
     </main>
-  )
+  );
 }

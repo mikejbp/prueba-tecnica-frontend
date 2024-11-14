@@ -1,6 +1,9 @@
 export function MainSection() {
   return (
-    <section className="bg-red-light xl:bg-transparent relative px-4 sm:px-10 md:px-20 py-40 xl:py-0 xl:mt-[5.5rem] xl:mb-10 2xl:mt-40 mx-auto max-w-screen-2xl bg-light overflow-visible">
+    <section
+      id="banner"
+      className="bg-red-light xl:bg-transparent relative px-4 sm:px-10 md:px-20 py-40 xl:py-0 xl:mt-[5.5rem] xl:mb-10 2xl:mt-40 mx-auto max-w-screen-2xl bg-light overflow-visible"
+    >
       <div className="flex flex-col lg:flex-row w-full justify-between gap-y-20 md:gap-y-40 items-center xl:items-start">
         <aside className="flex flex-col gap-4 px-5 md:px-10 xl:px0">
           <h1 className="text-5xl sm:text-6xl xl:text-title font-bold text-white">
