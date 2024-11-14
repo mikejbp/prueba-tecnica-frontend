@@ -4,7 +4,7 @@ export function HowItWorks() {
   return (
     <section
       id="howitworks"
-      className="mb-20 xl:my-20 mx-auto px-5 sm:px-10 xl:px-40 max-w-screen-2xl flex flex-col gap-y-20 xl:gap-20 lg:flex-row items-center xl:items-start justify-around relative"
+      className="mb-20 xl:my-20 mx-auto px-5 sm:px-10 xl:px-40 max-w-screen-2xl flex flex-col gap-y-20 lg:gap-20 lg:flex-row items-center xl:items-start justify-around relative"
     >
       <aside className="flex flex-col gap-5 relative">
         <div className="hidden sm:flex gap-40">
@@ -38,6 +38,18 @@ export function HowItWorks() {
           <CustomInput placeholder="Zip Code" type="number" width="w-60" />
         </div>
       </aside>
+      <svg
+        className="absolute -top-48 left-1/2 -z-10 hidden xl:block"
+        width="1300"
+        height="800"
+        viewBox="0 0 384 384"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="192" cy="192" r="192" fill="#FFE530" />
+        <circle cx="192" cy="162" r="158" fill="#FFE12A" />
+        <circle cx="192" cy="102" r="100" fill="#FFDC26" />
+      </svg>
     </section>
   );
 }
