@@ -1,4 +1,11 @@
-import { DynamicSection, HowItWorks, MainSection, Testimonials, Wave } from '../app/components';
+import {
+  DynamicSection,
+  HowItWorks,
+  MainSection,
+  MakeFetch,
+  Testimonials,
+  Wave,
+} from '../app/components';
 import HomeLayout from '../app/components/layout/HomeLayout';
 
 export function Home() {
@@ -52,6 +59,7 @@ export function Home() {
       <DynamicSection />
       <Testimonials />
       <HowItWorks />
+      <MakeFetch />
     </HomeLayout>
   );
 }

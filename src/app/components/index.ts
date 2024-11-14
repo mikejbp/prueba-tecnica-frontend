@@ -5,6 +5,7 @@ export * from './layout/Navbar';
 export * from './home/DynamicSection';
 export * from './home/HowItWorks';
 export * from './home/MainSection';
+export * from './home/MakeFetch';
 export * from './home/Testimonials';
 export * from './custom/CurvedDashedLine';
 export * from './custom/CustomInput';
