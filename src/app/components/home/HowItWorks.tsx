@@ -21,7 +21,7 @@ export function HowItWorks() {
           <CustomSquare image="/images/dog-1.svg" alt="Relax" />
           <CustomSquare image="/images/happy.svg" alt="Match" />
         </div>
-        <CurvedDashedLine className="hidden sm:block absolute bottom-28 -left-28 w-[35rem] h-[25rem] transform rotate-90" />
+        <CurvedDashedLine className="hidden sm:block absolute bottom-8 -left-20 w-[35rem] h-[25rem] transform rotate-90" />
       </aside>
 
       <aside className="max-w-screen-sm flex flex-col gap-5">
