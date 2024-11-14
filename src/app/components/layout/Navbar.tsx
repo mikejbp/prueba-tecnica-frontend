@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { useSectionStore } from '../../../store/store';
 
 interface MenuItems {
   id: number;
@@ -8,17 +9,22 @@ interface MenuItems {
 }
 
 export function Navbar() {
+  const { setActiveSection } = useSectionStore();
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const menuItems: MenuItems[] = [
-    { id: 1, name: 'Location', link: '#location' },
-    { id: 2, name: 'Blog', link: '#blog' },
-    { id: 3, name: 'About Us', link: '#about' },
-    { id: 4, name: 'Services', link: '#services' },
-    { id: 5, name: 'Franchise with Us', link: '#contact' },
+    { id: 1, name: 'Location', link: 'location' },
+    { id: 2, name: 'Blog', link: 'blog' },
+    { id: 3, name: 'About Us', link: 'about' },
+    { id: 4, name: 'Services', link: 'services' },
+    { id: 5, name: 'Franchise with Us', link: 'contact' },
   ];
 
   const handleOpenMenu = () => setOpenSidebar(!openSidebar);
+
+  const handleSectionActive = (section: string) => {
+    setActiveSection(section);
+  };
 
   return (
     <header className="bg-red-light xl:bg-transparent px-10 md:px-24 py-4">
@@ -28,8 +34,8 @@ export function Navbar() {
         </div>
         <ul className="hidden md:flex gap-x-6 font-openSans font-normal text-menu">
           {menuItems.map((item) => (
-            <li key={item.id}>
-              <a href={item.link} className="text-white animated-underline">
+            <li key={item.id} onClick={() => handleSectionActive(item.link)}>
+              <a href={`#${item.link}`} className="text-white animated-underline">
                 {item.name}
               </a>
             </li>

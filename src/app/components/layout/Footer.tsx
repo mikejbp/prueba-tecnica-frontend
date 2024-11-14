@@ -1,4 +1,5 @@
 import { MoveRight } from 'lucide-react';
+import { CustomInput } from '..';
 
 interface Column {
   title: string;
@@ -44,16 +45,7 @@ export function Footer() {
               ))}
             </ul>
             {col.isNewsletter && (
-              <div className="mt-6 absolute">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="p-4 text-gray bg-white rounded-full shadow-md 2xl:w-80"
-                />
-                <div className="bg-red-light shadow-sm shadow-red-light max-w-12 rounded-full h-12 p-3 relative bottom-[3.3rem] left-[10.8rem] 2xl:left-[16.5rem]">
-                  <MoveRight />
-                </div>
-              </div>
+              <CustomInput placeholder="Email Address" type="email" left="16.5rem" />
             )}
           </div>
         ))}

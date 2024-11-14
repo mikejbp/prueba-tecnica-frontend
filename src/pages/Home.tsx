@@ -1,7 +1,25 @@
-import { MainSection, Wave } from '../app/components';
+import { useEffect } from 'react';
+import { DynamicSection, MainSection, Wave } from '../app/components';
 import HomeLayout from '../app/components/layout/HomeLayout';
+import { SectionData } from '../app/interfaces';
+import { useSectionStore } from '../store/store';
 
 export function Home() {
+  const { activeSection, setActiveSection } = useSectionStore();
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      setActiveSection(hash || 'services');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [setActiveSection]);
+
   return (
     <HomeLayout>
       <div className="hidden xl:block">
@@ -44,11 +62,12 @@ export function Home() {
             height: 'auto',
             zIndex: -3,
           }}
-          viewBox="200 80 1200 490"
+          viewBox="200 80 1300 490"
           opacity={0.8}
         />
       </div>
       <MainSection />
+      <DynamicSection />
     </HomeLayout>
   );
 }

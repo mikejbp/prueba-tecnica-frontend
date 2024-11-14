@@ -2,5 +2,8 @@ export * from './layout/Footer';
 export * from './layout/HomeLayout';
 export * from './layout/Layout';
 export * from './layout/Navbar';
+export * from './home/DynamicSection';
 export * from './home/MainSection';
+export * from './custom/CustomInput';
+export * from './custom/CustomSquare';
 export * from './custom/Wave';
