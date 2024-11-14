@@ -53,6 +53,7 @@ export default {
         'menu': 'var(--font-size-navbar-menu)',
         'title': 'var(--font-size-main-title)',
         'description': 'var(--font-size-main-description)',
+        'button': 'var(--font-size-button)',
       },
     },
   },

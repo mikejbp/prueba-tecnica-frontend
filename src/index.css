@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('./assets/fonts/OpenSans-Regular.ttf') format('ttf'), url('./assets/fonts/OpenSans-Bold.ttf') format('ttf');
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('ttf'),
+    url('./assets/fonts/OpenSans-Bold.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,14 +19,16 @@
 
 @font-face {
   font-family: 'Comfortaa';
-  src: url('./assets/fonts/Comfortaa-Bold.ttf') format('ttf'), url('./assets/fonts/Comfortaa-Regular.ttf') format('ttf');
+  src: url('./assets/fonts/Comfortaa-Bold.ttf') format('ttf'),
+    url('./assets/fonts/Comfortaa-Regular.ttf') format('ttf');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Segoe UI';
-  src: url('./assets/fonts/SegoeUI.ttf') format('ttf'), url('./assets/fonts/SegoeUI-Bold.ttf') format('ttf');
+  src: url('./assets/fonts/SegoeUI.ttf') format('ttf'),
+    url('./assets/fonts/SegoeUI-Bold.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -83,6 +86,7 @@
   --font-size-navbar-menu: 24px;
   --font-size-main-title: 84px;
   --font-size-main-description: 24px;
+  --font-size-button: 20px;
 }
 
 body {

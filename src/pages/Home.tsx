@@ -16,7 +16,7 @@ export function Home() {
             height: 'auto',
             zIndex: -1,
           }}
-          viewBox="0 0 1400 490"
+          viewBox="0 15 1300 490"
           opacity={1}
         />
         <Wave
@@ -30,7 +30,7 @@ export function Home() {
             height: 'auto',
             zIndex: -2,
           }}
-          viewBox="0 50 1400 490"
+          viewBox="0 60 1450 490"
           opacity={0.85}
         />
         <Wave
@@ -44,7 +44,7 @@ export function Home() {
             height: 'auto',
             zIndex: -3,
           }}
-          viewBox="0 60 1300 490"
+          viewBox="200 80 1200 490"
           opacity={0.8}
         />
       </div>

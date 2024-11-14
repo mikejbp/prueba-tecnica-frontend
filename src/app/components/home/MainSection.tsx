@@ -2,17 +2,19 @@ export function MainSection() {
   return (
     <section className="bg-red-light xl:bg-transparent relative px-4 sm:px-10 md:px-20 py-40 xl:py-0 xl:mt-[5.5rem] xl:mb-10 2xl:mt-40 mx-auto max-w-screen-2xl bg-light overflow-visible">
       <div className="flex flex-col lg:flex-row w-full justify-between gap-y-20 md:gap-y-40 items-center xl:items-start">
-        <aside className="md:text-left px-5 md:px-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">We Get Pet Care!</h1>
-          <p className="text-description text-white mt-5 max-w-2xl leading-7">
+        <aside className="flex flex-col gap-4 px-5 md:px-10 xl:px0">
+          <h1 className="text-5xl sm:text-6xl xl:text-title font-bold text-white">
+            We Get Pet Care!
+          </h1>
+          <p className="text-description text-white mt-5 max-w-[40rem] leading-7">
             For over 17 Years, Fetch! Pet Care has been a trusted partner in keeping pets healthy
             and happy!
           </p>
-          <div className="flex gap-2 mt-5">
-            <button className="rounded-3xl bg-blue text-white py-3 px-4 max-w-xs leading-5">
+          <div className="flex items-center gap-6 mt-5">
+            <button className="rounded-full text-button font-bold bg-blue text-lighterWhite p-6 max-w-xs leading-5">
               Schedule Service
             </button>
-            <p className="text-gray-200 py-2 px-4 rounded">Or Call 866.338.2463</p>
+            <p className="text-lighterWhite text-button">Or Call 866.338.2463</p>
           </div>
         </aside>
 
