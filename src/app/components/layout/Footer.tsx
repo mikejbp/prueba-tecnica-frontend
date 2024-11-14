@@ -1,4 +1,3 @@
-import { MoveRight } from 'lucide-react';
 import { CustomInput } from '..';
 
 interface Column {
