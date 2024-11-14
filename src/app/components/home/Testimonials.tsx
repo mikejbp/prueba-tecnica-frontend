@@ -47,7 +47,7 @@ export function Testimonials() {
   };
 
   return (
-    <section className="relative py-16 px-4 overflow-hidden">
+    <section className="relative md:py-16 px-4 overflow-hidden">
       <h2 className="text-4xl md:text-5xl font-bold text-center text-red-light mb-12 max-w-3xl mx-auto">
         Here's what pet owners have to say about Fetch! Pet Care...
       </h2>
@@ -74,14 +74,14 @@ export function Testimonials() {
         })}
         <button
           onClick={handlePrev}
-          className="absolute left-40 md:left-0 xl:-left-32 2xl:-left-40 bottom-32 md:bottom-40 transform -translate-y-1/2 bg-red-light text-white rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 z-10 shadow-sm shadow-red-light"
+          className="absolute bottom-28 -left-0 sm:left-40 md:left-0 xl:-left-32 2xl:-left-40 sm:bottom-32 md:bottom-40 transform -translate-y-1/2 bg-red-light text-white rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 z-10 shadow-sm shadow-red-light"
           aria-label="Previous testimonial"
         >
           <MoveLeft className="w-6 h-6" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-40 md:right-0 xl:-right-32 2xl:-right-40 bottom-32 md:bottom-40 transform -translate-y-1/2 bg-red-light text-white rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 z-10 shadow-sm shadow-red-light"
+          className="absolute bottom-28 -right-0 sm:right-40 md:right-0 xl:-right-32 2xl:-right-40 sm:bottom-32 md:bottom-40 transform -translate-y-1/2 bg-red-light text-white rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 z-10 shadow-sm shadow-red-light"
           aria-label="Next testimonial"
         >
           <MoveRight className="w-6 h-6" />
