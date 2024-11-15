@@ -112,8 +112,9 @@ export function Login() {
         return;
       }
 
-      const response = await axiosPost('/login', objBody, {});
+      const response = await axiosPost('/login', objBody);
       console.log(response.data);
+      toast.success('¡Inicio de sesión exitoso!');
     } catch (error) {
       console.log(error);
       toast.error('Error al iniciar sesión. Inténtalo de nuevo.');
