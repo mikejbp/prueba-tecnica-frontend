@@ -1,17 +1,7 @@
-import { type ChangeEvent, useState, type FocusEvent } from 'react';
+import { type ChangeEvent, useState } from 'react';
 import { axiosPost } from '../api';
-import { toast } from 'sonner';
-
-interface UserData {
-  email: string;
-  password: string;
-}
-
-interface ErrorsList {
-  isValid: boolean;
-  errorsList: Record<string, boolean>;
-  errorMessages: Record<string, string>;
-}
+import { ErrorsList, UserData } from '../app/interfaces/login.interface';
+import { validateInputs, toastRender, handleBlur } from '../app/utils';
 
 export function Login() {
   const [loading, setLoading] = useState(false);
@@ -35,63 +25,6 @@ export function Login() {
     setUserData((prev) => ({ ...prev, [name]: value }));
   };
 
-  /**
-   * Validates the user input fields for email and password.
-   * The email is considered valid if it matches the regular expression pattern for a standard email format.
-   * The password is considered valid if it contains at least one letter, one number, and is at least 8 characters long.
-   * @returns {ErrorsList} - Returns an object containing a boolean indicating if the inputs are valid, a list of errors, and corresponding error messages.
-   */
-  const validateInputs = (): ErrorsList => {
-    const errorsList = {
-      emailEmpty: userData.email.trim().length === 0,
-      emailInvalid:
-        userData.email.trim().length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userData.email),
-      passwordEmpty: userData.password.trim().length === 0,
-      passwordInvalid:
-        userData.password.trim().length > 0 &&
-        !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(userData.password),
-    };
-
-    const errorMessages = {
-      emailEmpty: 'El email no puede estar vacío.',
-      emailInvalid: 'El email no es válido.',
-      passwordEmpty: 'La contraseña no puede estar vacía.',
-      passwordInvalid:
-        'La contraseña debe tener al menos 8 caracteres, incluyendo una letra y un número.',
-    };
-
-    return {
-      isValid: Object.values(errorsList).every((error) => !error),
-      errorsList,
-      errorMessages,
-    };
-  };
-
-  /**
-   * Handles the blur event for user data input fields.
-   * Validates the input fields and sets the error state if there are any errors.
-   * @param {FocusEvent<HTMLInputElement>} e - The blur event from the input field.
-   */
-  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
-    const validation = validateInputs();
-    setErrors(validation);
-
-    const { name } = e.target;
-    if (name === 'email') {
-      if (validation.errorsList.emailEmpty) {
-        toast.warning(validation.errorMessages.emailEmpty);
-      } else if (validation.errorsList.emailInvalid) {
-        toast.warning(validation.errorMessages.emailInvalid);
-      }
-    } else if (name === 'password') {
-      if (validation.errorsList.passwordEmpty) {
-        toast.warning(validation.errorMessages.passwordEmpty);
-      } else if (validation.errorsList.passwordInvalid) {
-        toast.warning(validation.errorMessages.passwordInvalid);
-      }
-    }
-  };
-
   const handleLogin = async () => {
     try {
       setLoading(true);
@@ -100,12 +33,12 @@ export function Login() {
         password: userData.password,
       };
 
-      const { isValid, errorsList, errorMessages } = validateInputs();
+      const { isValid, errorsList, errorMessages } = validateInputs(userData);
 
       if (!isValid) {
         Object.keys(errorsList).forEach((key) => {
           if (errorsList[key as keyof typeof errorsList]) {
-            toast.warning(errorMessages[key as keyof typeof errorMessages]);
+            toastRender('warning', errorMessages[key as keyof typeof errorMessages]);
           }
         });
 
@@ -114,10 +47,10 @@ export function Login() {
 
       const response = await axiosPost('/login', objBody);
       console.log(response.data);
-      toast.success('¡Inicio de sesión exitoso!');
+      toastRender('success', 'Inicio de sesión exitoso.');
     } catch (error) {
       console.log(error);
-      toast.error('Error al iniciar sesión. Inténtalo de nuevo.');
+      toastRender('error', 'Error al iniciar sesión.');
     } finally {
       setLoading(false);
     }
@@ -172,7 +105,7 @@ export function Login() {
               name="email"
               placeholder="EMAIL"
               onChange={handleUserData}
-              onBlur={handleBlur}
+              onBlur={(e) => handleBlur(e, userData, setErrors)}
               className="w-full h-12 px-5 text-gray-dark bg-white rounded shadow-md border-0 focus:ring-2 focus:ring-red-light"
             />
             <input
@@ -180,7 +113,7 @@ export function Login() {
               name="password"
               placeholder="CONTRASEÑA"
               onChange={handleUserData}
-              onBlur={handleBlur}
+              onBlur={(e) => handleBlur(e, userData, setErrors)}
               className="w-full h-12 px-5 text-gray-dark bg-white rounded shadow-md border-0 focus:ring-2 focus:ring-red-light"
             />
           </div>
