@@ -1,4 +1,4 @@
-import { SectionData } from '..';
+import { SectionData } from '../interfaces';
 
 export const sectionData: SectionData[] = [
   {
