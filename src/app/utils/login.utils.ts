@@ -1,6 +1,6 @@
 import { toast } from 'sonner';
 import { type FocusEvent } from 'react';
-import { type ErrorsList, type ToastType, type UserData } from '../interfaces';
+import { HelperText, type ErrorsList, type ToastType, type UserData } from '../interfaces';
 
 /**
  * Renders a toast notification with the specified type and message.
@@ -59,10 +59,10 @@ export const handleBlur = (
   e: FocusEvent<HTMLInputElement>,
   userData: UserData,
   setErrors: (errors: ErrorsList) => void,
+  setHelperText: (text: HelperText) => void,
 ) => {
   const validation = validateInputs(userData);
   setErrors(validation);
-
   const { name } = e.target;
   const { errorsList, errorMessages } = validation;
 
@@ -71,7 +71,7 @@ export const handleBlur = (
 
   errorKeys.forEach((key) => {
     if (errorsList[key]) {
-      toastRender('warning', errorMessages[key]);
+      setHelperText({ key, message: errorMessages[key] });
     }
   });
 };

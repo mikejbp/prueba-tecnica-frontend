@@ -1,10 +1,14 @@
-import { type ChangeEvent, useState } from 'react';
+import { type ChangeEvent, useEffect, useState } from 'react';
 import { axiosPost } from '../api';
-import { ErrorsList, UserData } from '../app/interfaces/login.interface';
+import { type ErrorsList, type HelperText, type UserData } from '../app/interfaces/login.interface';
 import { validateInputs, toastRender, handleBlur } from '../app/utils';
 
 export function Login() {
   const [loading, setLoading] = useState(false);
+  const [helperText, setHelperText] = useState<HelperText>({
+    key: '',
+    message: '',
+  });
   const [userData, setUserData] = useState<UserData>({
     email: '',
     password: '',
@@ -105,17 +109,23 @@ export function Login() {
               name="email"
               placeholder="EMAIL"
               onChange={handleUserData}
-              onBlur={(e) => handleBlur(e, userData, setErrors)}
+              onBlur={(e) => handleBlur(e, userData, setErrors, setHelperText)}
               className="w-full h-12 px-5 text-gray-dark bg-white rounded shadow-md border-0 focus:ring-2 focus:ring-red-light"
             />
+            {helperText.key.includes('email') && (
+              <p className="text-red-light text-md leading-5">{helperText.message}</p>
+            )}
             <input
               type="password"
               name="password"
               placeholder="CONTRASEÑA"
               onChange={handleUserData}
-              onBlur={(e) => handleBlur(e, userData, setErrors)}
+              onBlur={(e) => handleBlur(e, userData, setErrors, setHelperText)}
               className="w-full h-12 px-5 text-gray-dark bg-white rounded shadow-md border-0 focus:ring-2 focus:ring-red-light"
             />
+            {helperText.key.includes('password') && (
+              <p className="text-red-light text-md leading-5">{helperText.message}</p>
+            )}
           </div>
 
           <div className="flex justify-end">
