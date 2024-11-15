@@ -9,4 +9,9 @@ export interface ErrorsList {
   errorMessages: Record<string, string>;
 }
 
+export interface HelperText {
+  key: string;
+  message: string;
+}
+
 export type ToastType = 'success' | 'error' | 'warning' | 'info';
