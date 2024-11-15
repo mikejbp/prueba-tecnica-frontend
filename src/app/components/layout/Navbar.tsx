@@ -60,7 +60,7 @@ export function Navbar() {
           <div className="flex-shrink-0 rounded-full bg-white px-3 py-2">
             <img src="/logo.svg" alt="Logo" className="h-10" />
           </div>
-          <ul className="hidden md:flex gap-x-6 font-openSans font-normal text-menu">
+          <ul className="hidden md:flex gap-x-6 font-openSans font-normal text-lg lg:text-menu">
             {menuItems.map((item) => (
               <li key={item.id} onClick={() => handleSectionActive(item.link)}>
                 <a href={`#${item.link}`} className="text-white animated-underline">
@@ -85,7 +85,7 @@ export function Navbar() {
           </div>
 
           <div
-            className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-black bg-opacity-50 z-[100] transition-opacity duration-300 ${
               openSidebar ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
           >
