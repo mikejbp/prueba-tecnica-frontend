@@ -8,11 +8,8 @@ export function DynamicSection() {
   const currentSection = sectionData.find((section) => section.id === activeSection);
 
   return (
-    <div className="relative">
-      <section
-        id={currentSection?.id ?? ''}
-        className="z-10 mx-auto flex flex-col gap-y-20 lg:flex-row justify-around items-center xl:items-start px-5 sm:px-10 xl:px-0 max-w-screen-2xl bg-transparent mt-20 xl:mt-64 mb-20"
-      >
+    <div id={currentSection?.id ?? ''} className="relative">
+      <section className="z-10 mx-auto flex flex-col gap-y-20 lg:flex-row justify-around items-center xl:items-start px-5 sm:px-10 xl:px-0 max-w-screen-2xl bg-transparent xl:mt-64 mt-20 mb-20">
         <aside className="flex flex-col gap-8 px-5 md:px-10 xl:p-x0 relative z-20">
           <h2 className="text-5xl font-bold text-red-light font-comfortaa">
             {currentSection?.title ?? ''}
