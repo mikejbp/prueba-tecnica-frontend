@@ -47,6 +47,6 @@ Como se solicitó en los requisitos de la prueba:
 ### Deploy
 
 En este apartado dejo el link de la aplicación desplegada:
-[deploy](prueba-tecnica-frontend-five.vercel.app/)
+[deploy](https://prueba-tecnica-frontend-five.vercel.app/)
 
 La aplicación fue desarrollada en base al Adobe XD proporcionado, utilizando las fuentes mencionadas y assets proporcionados. Sin embargo, se que no está del todo parecida en ciertas secciones debido a la ausencia de SVGs que no fueron proporcionados, debido a esto tuve que desarrollarla como pude utilizando mi creatividad e imaginación.
