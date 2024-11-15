@@ -1,11 +1,11 @@
 import { Link } from 'wouter';
-import './NotFoundPage.css'; // Import the CSS file for animations
+import '../styles/NotFoundPage.css';
 
 export function NotFoundPage() {
   return (
-    <section className="w-screen min-h-screen flex items-center">
+    <section className="w-screen min-h-screen flex items-center px-5 sm:px-10 ">
       <svg
-        className="absolute -top-48 left-1/2 -z-10 hidden xl:block drop-shadow-md"
+        className="absolute -top-48 left-1/2 -z-10 hidden md:block drop-shadow-md"
         width="1300"
         height="800"
         viewBox="0 0 384 384"
@@ -24,7 +24,9 @@ export function NotFoundPage() {
           backgroundRepeat: 'repeat-x',
         }}
       >
-        <h1 className="text-3xl md:text-5xl text-white z-10 font-openSans">Oops! Page not found</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-5xl text-white z-10 font-openSans leading-6">
+          Oops! Page not found
+        </h1>
         <section className="error-container flex z-10">
           <span className="text-title animate-bounce-sequential delay-0 font-museoSans">4</span>
           <span className="text-title animate-bounce-sequential delay-1 font-museoSans">0</span>
@@ -52,9 +54,12 @@ export function NotFoundPage() {
             />
           </div>
         </aside>
-        <div className="text-center z-10 flex gap-3">
-          <h2 className="text-2xl text-white font-comfortaa">Are you lost?</h2>
-          <Link to={'/'} className="text-2xl text-white animated-underline font-comfortaa">
+        <div className="text-center z-10 flex flex-col sm:flex-row gap-2 sm:gap-3">
+          <h2 className="text-xl sm:text-2xl text-white font-comforta leading-6">Are you lost?</h2>
+          <Link
+            to={'/'}
+            className="text-xl sm:text-2xl text-white animated-underline font-comfortaa leading-6"
+          >
             Go back to Home
           </Link>
         </div>
