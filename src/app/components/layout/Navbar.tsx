@@ -13,19 +13,6 @@ export function Navbar() {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowScrollTopButton(true);
-      } else {
-        setShowScrollTopButton(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -40,6 +27,11 @@ export function Navbar() {
 
   const handleOpenMenu = () => setOpenSidebar(!openSidebar);
 
+  /**
+   * Handles the activation of a section by setting it as the active section
+   * and scrolling it into view smoothly.
+   * @param section - The ID of the section to activate and scroll into view.
+   */
   const handleSectionActive = (section: string) => {
     setActiveSection(section);
     const element = document.getElementById(section);
@@ -47,6 +39,19 @@ export function Navbar() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowScrollTopButton(true);
+      } else {
+        setShowScrollTopButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
