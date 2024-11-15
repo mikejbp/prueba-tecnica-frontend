@@ -1,12 +1,16 @@
-import { Route } from 'wouter';
+import { Route, Router } from 'wouter';
 import { Home, Login } from '../../pages';
+import { Toaster } from 'sonner';
 
 export default function AppRouter() {
   return (
     <main>
-      <Route path="/" component={Home} />
+      <Toaster visibleToasts={3} expand position="top-right" duration={5000} />
 
-      <Route path="/login" component={Login} />
+      <Router>
+        <Route path="/" component={Home} />
+        <Route path="/login" component={Login} />
+      </Router>
     </main>
   );
 }
