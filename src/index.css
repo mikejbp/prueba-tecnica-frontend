@@ -1,68 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('ttf'),
+    url('./assets/fonts/OpenSans-Bold.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo Sans Rounded 700';
+  src: url('./assets/fonts/MuseoSansRounded-700.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('./assets/fonts/Comfortaa-Bold.ttf') format('ttf'),
+    url('./assets/fonts/Comfortaa-Regular.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('./assets/fonts/SegoeUI.ttf') format('ttf'),
+    url('./assets/fonts/SegoeUI-Bold.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gibson';
+  src: url('./assets/fonts/Fontspring-DEMO-gibson-semibold.otf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--light-white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --white: #ffffff;
+  --light-white: #f3f6fb;
+  --lighter-white: #f8f8f8;
+  --gray-light: #00000029;
+  --gray: #808080;
+  --gray-dark: #707070;
+  --gray-darker: #4d4f5c;
+  --gray-darkest: #a4afb7;
+  --blue-light: #2c1dad29;
+  --blue-lighter: #3220ce29;
+  --blue-lightest: #4487ff57;
+  --blue-wave-1: #3169df;
+  --blue-wave-2: #3874e8;
+  --blue: #4487ff;
+  --blue-dark: #015f91;
+  --purple-light: #a89eff;
+  --purple: #3220ce80;
+  --red-light: #ff6752;
+  --red-lighter: #d65c15;
+  --red-lightest: #fd6845;
+  --red: #fe6845;
+  --red-dark: #fd68454d;
+  --orange-yellow-light: #feb53a;
+  --orange-yellow: #ffcc55;
+  --orange-yellow-dark: #ffe530;
+
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-museo-sans-rounded: 'Museo Sans Rounded 700', sans-serif;
+  --font-comfortaa: 'Comfortaa', sans-serif;
+  --font-segoe-ui: 'Segoe UI', sans-serif;
+  --font-gibson: 'Gibson', sans-serif;
+
+  --font-size-navbar-menu: 24px;
+  --font-size-main-title: 84px;
+  --font-size-main-description: 24px;
+  --font-size-button: 20px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-open-sans);
+  overflow-x: hidden;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: var(--font-museo-sans-rounded);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+p.test-comfortaa {
+  font-family: var(--font-comfortaa);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+p.test-segoe-ui {
+  font-family: var(--font-segoe-ui);
+}
+
+p.test-gibson {
+  font-family: var(--font-gibson);
+}
+
+.animated-underline {
+  position: relative;
+  padding-bottom: 5px;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.animated-underline:hover::after {
+  transform: scaleX(1);
+}
+
+@layer base {
+  .h1 {
+    font-size: var(--font-size-main-title);
   }
-  a:hover {
-    color: #747bff;
+
+  .font-open-sans {
+    font-family: var(--font-open-sans);
   }
-  button {
-    background-color: #f9f9f9;
+
+  .font-museo-sans-rounded {
+    font-family: var(--font-museo-sans-rounded);
+  }
+
+  .font-comfortaa {
+    font-family: var(--font-comfortaa);
+  }
+
+  .font-segoe-ui {
+    font-family: var(--font-segoe-ui);
+  }
+
+  .font-gibson {
+    font-family: var(--font-gibson);
+  }
+}
+
+@layer base {
+  body {
+    @apply font-open-sans;
+  }
+
+  h1 {
+    @apply font-museo-sans-rounded;
+  }
+
+  p.test-comfortaa {
+    @apply font-comfortaa;
+  }
+
+  p.test-segoe-ui {
+    @apply font-segoe-ui;
+  }
+
+  p.test-gibson {
+    @apply font-gibson;
   }
 }
