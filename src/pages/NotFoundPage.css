@@ -1,0 +1,41 @@
+@keyframes bounce-slow {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce-sequential {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.animate-bounce-sequential {
+  animation: bounce-sequential 3s infinite;
+}
+
+.delay-0 {
+  animation-delay: 1s;
+}
+
+.delay-1 {
+  animation-delay: 2s;
+}
+
+.delay-2 {
+  animation-delay: 3s;
+}
